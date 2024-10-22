@@ -1,5 +1,7 @@
 import numpy as np
 import pandas as pd
+G = 6.67430e-11
+c = 299792458
 
 # Functions to compute velocity and acceleration 
 def velocity(position, time):
