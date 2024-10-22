@@ -35,7 +35,9 @@ def acceleration(velocity, time):
     acceleration = np.diff(velocity, axis=0) / np.diff(time[:-1]).reshape(-1, 1) # give arrays correct shape, compute acceleration
     return acceleration
 
-# Quadrupole calcs
+# QUADRUPOLE CALCS
+
+# Quadrupole moment snapshot
 def quadrupole_moment(masses, positions):
     """ 
     Calculate the 2D quadrupole moment for a pair of masses (masses = [m1, m2]). 
@@ -52,6 +54,7 @@ def quadrupole_moment(masses, positions):
                 Q[i, j] += mass * (3 * pos[i] * pos[j] - (R if i == j else 0))
     return Q
 
+# Quadrupole moment along a trajectory
 def qdrpl_trajectory(masses, trajectories):
     """
     Find the quadrupole moment at each point in the 2D trajectory of two masses.
