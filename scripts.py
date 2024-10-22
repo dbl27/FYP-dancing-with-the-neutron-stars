@@ -16,7 +16,7 @@ def velocity(position, time):
     velocity = np.diff(positions, axis=0) / np.diff(time).reshape(-1, 1) # give arrays correct shape, compute velocity
     return velocity
 
-# OR
+# OR 
 
 def velocity_split(xpos, ypos, time):
     """
