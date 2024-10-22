@@ -4,5 +4,5 @@ scripts.py contains the finalised versions of whatever functions have been writt
 
 test_functions.ipynb serves as a location to test these functions with example data sets. Mainly here for troubleshooting / learning how the functions work.
 
-qdrpl_calcs.ipynb contains unfinished / ongoing writing for code and functions that are amed to be put in scripts.py onced finalised.
+qdrpl_calcs.ipynb contains unfinished / ongoing writing for code and functions that are aimed to be put in scripts.py onced finalised.
 
