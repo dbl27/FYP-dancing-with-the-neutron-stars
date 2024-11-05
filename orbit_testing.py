@@ -31,13 +31,13 @@ def update(frame):
     
     return star_1, star_2
 
-# Create the animation
+# Create animation
 animation = FuncAnimation(fig, update, frames=len(data), interval=100, blit=True)
 
-# Set the axis limits based on your data range
+# Set the axis limits based on data range
 plt.axis('scaled')
-plt.xlim(-80000, 80000)  # Adjust limits to match your data
+plt.xlim(-80000, 80000) 
 plt.ylim(-80000, 80000)
-plt.close()  # Prevents duplicate display of the animation in Colab
+plt.close()  # Prevents duplicate display of the animation
 plt.rcParams['animation.html'] = 'html5'
 HTML(animation.to_jshtml())
