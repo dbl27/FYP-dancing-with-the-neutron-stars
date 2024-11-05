@@ -6,3 +6,5 @@ test_functions.ipynb serves as a location to test these functions with example d
 
 qdrpl_calcs.ipynb contains unfinished / ongoing writing for code and functions that are aimed to be put in scripts.py onced finalised.
 
+orbit_testing.py has a simple demonstration of animation for a binary orbit system. 
+
