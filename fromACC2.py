@@ -118,7 +118,7 @@ class GWStrainCalculator:
         -----------
         masses_t1 : List[MassPoint]
             List of mass points at time t1 (previous time step).
-        masses_t2 : List[MassPoint]
+        masses_t2 : List[MassPoint]s
             List of mass points at time t2 (current time step).
         masses_t3 : List[MassPoint]
             List of mass points at time t3 (next time step).
@@ -173,54 +173,3 @@ class GWStrainCalculator:
             Total strain amplitude
         """
         return np.sqrt(h_plus**2 + h_cross**2)
-
-def simulate_binary_system(mass1: float, mass2: float, 
-                         separation: float, orbital_period: float,
-                         num_steps: int) -> List[List[MassPoint]]:
-    """
-    Create a simple circular binary system for testing
-    
-    Parameters:
-    -----------
-    mass1, mass2 : float
-        Masses in kg
-    separation : float
-        Initial separation in meters
-    orbital_period : float
-        Orbital period in seconds
-    num_steps : int
-        Number of time steps to simulate
-        
-    Returns:
-    --------
-    List[List[MassPoint]]
-        List of mass point states at each time step
-    """
-    dt = orbital_period / num_steps
-    omega = 2 * np.pi / orbital_period
-    
-    trajectory = []
-    
-    for t in range(num_steps):
-        angle = omega * t * dt
-        
-        # Calculate positions for a circular orbit
-        x1 = (mass2 / (mass1 + mass2)) * separation * np.cos(angle)
-        y1 = (mass2 / (mass1 + mass2)) * separation * np.sin(angle)
-        
-        x2 = -(mass1 / (mass1 + mass2)) * separation * np.cos(angle)
-        y2 = -(mass1 / (mass1 + mass2)) * separation * np.sin(angle)
-        
-        # Calculate velocities
-        vx1 = -omega * y1
-        vy1 = omega * x1
-        vx2 = -omega * y2
-        vy2 = omega * x2
-        
-        m1 = MassPoint(mass1, x1, y1, vx1, vy1)
-        m2 = MassPoint(mass2, x2, y2, vx2, vy2)
-        
-        trajectory.append([m1, m2])
-    
-    return trajectory
-"///////////////////////////////////////////////////////////////////////////////////////"
